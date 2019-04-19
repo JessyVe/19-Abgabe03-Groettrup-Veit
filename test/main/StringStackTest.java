@@ -5,6 +5,7 @@
  */
 package main;
 
+import java.util.Arrays;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -19,7 +20,6 @@ import static org.junit.Assert.*;
 public class StringStackTest {
 
     public Stack s;
-    
 
     @Before
     public void setup() throws Exception {
@@ -43,7 +43,7 @@ public class StringStackTest {
      */
     @Test
     public void testIsNotEmpty() throws Exception {
-        s.push("Test Iteam");
+        s.push("Test Item");
         assertEquals(false, s.isEmpty());
     }
 
@@ -58,6 +58,12 @@ public class StringStackTest {
      */
     @Test
     public void testPushPop() throws Exception {
+        String[] testData = new String[]{"Test Item1", "Test Item2", "Test Item3"};
+        Arrays.stream(testData).forEach(str -> s.push(str));
+        for (int i = testData.length - 1; i > -1; i--) {
+             assertEquals(testData[i], s.pop());
+        }
+        assertEquals(true, s.isEmpty());
     }
 
     /**
