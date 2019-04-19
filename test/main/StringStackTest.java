@@ -33,6 +33,7 @@ public class StringStackTest {
      */
     @Test
     public void testIsEmpty() throws Exception {
+        assertEquals(true, s.isEmpty());
     }
 
     /**
