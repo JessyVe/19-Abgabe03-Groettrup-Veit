@@ -43,6 +43,8 @@ public class StringStackTest {
      */
     @Test
     public void testIsNotEmpty() throws Exception {
+        s.push("Test Iteam");
+        assertEquals(false, s.isEmpty());
     }
 
     /**
