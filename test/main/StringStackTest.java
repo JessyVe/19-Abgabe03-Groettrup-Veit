@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Jessy
+ * @author Jessy and Laura
  */
 public class StringStackTest {
 
@@ -63,8 +63,33 @@ public class StringStackTest {
         assertEquals(true, s.isEmpty());
     }
 
+
     /**
-     * Feel Free to insert other test cases for the String Stack Implementation
-     * !!!
+     * tests if you first push something, than pop it its still the same String
      */
+    @Test
+    public void testSameString() throws Exception{
+        String test = "Test";
+        s.push(test);
+        assertEquals(test, s.pop());
+    }
+
+    /**
+     * tests  if exception is thrown when too much is pushed
+     */
+    @Test(expected = IllegalStateException.class)
+    public void testStackOverflow() throws Exception{
+        for (int i = 0; i <= 10; i++) {
+            s.push("more");
+        }
+    }
+
+    /**
+     * tests if you pop an empty stack a exception is thrown
+     */
+    @Test(expected = IllegalStateException.class)
+    public void testEmptyPop() throws Exception{
+        s.pop();
+    }
+
 }
