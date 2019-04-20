@@ -78,7 +78,7 @@ public class StringStackTest {
      * tests  if exception is thrown when too much is pushed
      */
     @Test(expected = IllegalStateException.class)
-    public void testStackOverflow() throws Exception{
+    public void testOverflow() throws Exception{
         for (int i = 0; i <= 10; i++) {
             s.push("more");
         }
